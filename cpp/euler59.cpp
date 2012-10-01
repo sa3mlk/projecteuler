@@ -4,7 +4,7 @@
 #include <numeric>
 
 static const char cipherdata[] = {
-	#include "euler59.txt"
+	#include "../data/euler59.txt"
 };
 
 #define lengthof(T) (sizeof(T) / sizeof(T[0]))
@@ -14,7 +14,6 @@ using std::cout;
 using std::string;
 using std::count_if;
 using std::accumulate;
-using std::max;
 
 typedef vector<string> key_vector;
 
@@ -72,7 +71,6 @@ int main(int argc, char *argv[])
 		{
 			if (string::npos != pt.find(words[j]))
 			{
-				cout << "With key \"" << *it << "\": \"" << pt << "\"\n";
 				possible_keys.push_back(*it);
 				break;
 			}
@@ -95,7 +93,7 @@ int main(int argc, char *argv[])
 	}
 
 	string pt = decrypt(cipherdata, most_probable_key, sizeof(cipherdata));
-	cout << "Decrypting with most probable key \"" << most_probable_key << "\":  " << pt.c_str() << "\n";
+	cout << "Decrypting with most probable key \"" << most_probable_key.c_str() << "\":  " << pt.c_str() << "\n";
 	cout << "ASCII sum: " << accumulate(pt.begin(), pt.end(), 0) << "\n";
 
 	return 0;
