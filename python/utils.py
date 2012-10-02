@@ -86,6 +86,5 @@ def factors(n):
 		check += 1
 	if rootn == check:
 		fact.append(check)
-		fact.sort()
 	return fact
 
