@@ -30,7 +30,8 @@ def is_pandigital(n):
 	return digit_bits == 0x3fe
 
 def concat_numbers(a, b, c):
-	return a*(10**(num_digits(b) + num_digits(c))) + b*(10**num_digits(c)) + c
+	nc = num_digits(c)
+	return a*(10**(num_digits(b) + nc)) + b*(10**nc) + c
 
 def main():
 	pandigital_numbers = set()
