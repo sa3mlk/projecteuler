@@ -7,7 +7,7 @@ def main():
 	primes = []
 	for nums in pandigital_numbers:
 		for n in nums:
-			pn = int("".join([str(x) for x in n]))
+			pn = int("".join(str(x) for x in n))
 			if is_prime(pn):
 				primes.append(pn)
 	print "The largest 1 to n pandigital prime is {prime}.".format(prime=max(primes))
